@@ -105,18 +105,83 @@ body {
     margin-top: 0.5rem;
 }
 
-/* Blog post styles */
+/* Blog Post Styles */
 .blog-post {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
-.intro {
-    font-size: 1.2rem;
-    color: #444;
-    margin-bottom: 40px;
+.intro-section {
+    margin-bottom: 3rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.content-section h2 {
+    margin: 2.5rem 0 1rem;
+    color: #2d3748;
+}
+
+.content-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: #4a5568;
+}
+
+.tip-box {
+    background: #f7fafc;
+    border-left: 4px solid #4299e1;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.tip-box h3 {
+    color: #2b6cb0;
+    margin-bottom: 0.5rem;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #4299e1, #667eea);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.cta-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-box p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.conclusion-section {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.conclusion-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.conclusion-section li {
+    margin: 0.5rem 0;
+    color: #4a5568;
 }
 
 /* Tool section styles */
@@ -553,7 +618,12 @@ body {
     }
 
     .blog-post {
-        padding: 20px;
+        padding: 1rem;
+    }
+
+    .tip-box, .cta-box, .conclusion-section {
+        margin: 1.5rem 0;
+        padding: 1.5rem;
     }
 
     .tool-card {
@@ -591,5 +661,502 @@ body {
 
     .premium-features li::before {
         display: none;
+    }
+}
+
+/* CTA Banner Styles */
+.cta-banner {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.cta-banner p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button.primary {
+    background: white;
+    color: #2563eb;
+}
+
+.cta-button.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .cta-banner {
+        padding: 1.5rem;
+    }
+    
+    .cta-banner h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* AI Guide Page Styles */
+.hero-section {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.price-tag {
+    margin: 2rem 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.current-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.discount-badge {
+    background: #f59e0b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+.guarantee {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.features-section {
+    padding: 3rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.testimonials {
+    background: #f8f9fa;
+    padding: 3rem 0;
+    margin: 3rem 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stars {
+    color: #f59e0b;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card .author {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.buy-section {
+    padding: 3rem 0;
+}
+
+.buy-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.price-box {
+    margin: 2rem 0;
+}
+
+.offer-features {
+    list-style: none;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.offer-features li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.secure-note {
+    margin-top: 1rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.secure-note i {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .current-price {
+        font-size: 2rem;
+    }
+    
+    .buy-card {
+        padding: 2rem;
+    }
+}
+
+/* Use Cases Section Styles */
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.use-case-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.use-case-card:hover {
+    transform: translateY(-5px);
+}
+
+.use-case-card i {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.use-case-card h3 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.use-case-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.use-case-card ul li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #4b5563;
+}
+
+.use-case-card ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .use-case-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Affiliate Tools Page Styles */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.tool-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+}
+
+.tool-header {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.tool-header i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tool-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.commission {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.tool-content {
+    padding: 1.5rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.commission-details {
+    background: #f3f4f6;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.commission-details h4 {
+    margin: 0 0 0.5rem 0;
+    color: #4b5563;
+}
+
+.commission-details p {
+    margin: 0.5rem 0;
+    color: #6b7280;
+}
+
+.commission-details .highlight {
+    color: #059669;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4f46e5;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.step-card h3 {
+    margin: 1rem 0;
+    color: #1f2937;
+}
+
+.step-card p {
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Tips Section */
+.tips-section {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tip-card i {
+    font-size: 2rem;
+    color: #4f46e5;
+    margin-bottom: 1rem;
+}
+
+.tip-card h3 {
+    margin: 1rem 0;
+    color: #1f2937;
+}
+
+.tip-card p {
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-card {
+        margin: 0 1rem;
     }
 } 

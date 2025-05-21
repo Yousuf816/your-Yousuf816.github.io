@@ -50,7 +50,7 @@
                             <li>Free plan available</li>
                         </ul>
                         <div class="affiliate-cta">
-                            <a href="https://www.notion.so/product/ai?ref=YOUR_AFFILIATE_ID" target="_blank" rel="nofollow" class="affiliate-button">
+                            <a href="https://www.notion.so/product/ai?ref=YOUR_AFFILIATE_ID" target="_blank" rel="nofollow" class="affiliate-button" onclick="trackAffiliateClick('notion')">
                                 Try Notion AI Free <i class="fas fa-arrow-right"></i>
                             </a>
                             <p class="affiliate-note">Free plan available. Pro plan starts at $8/month</p>
@@ -73,7 +73,7 @@
                             <li>Free plan available</li>
                         </ul>
                         <div class="affiliate-cta">
-                            <a href="https://www.grammarly.com?ref=YOUR_AFFILIATE_ID" target="_blank" rel="nofollow" class="affiliate-button">
+                            <a href="https://www.grammarly.com?ref=YOUR_AFFILIATE_ID" target="_blank" rel="nofollow" class="affiliate-button" onclick="trackAffiliateClick('grammarly')">
                                 Try Grammarly Free <i class="fas fa-arrow-right"></i>
                             </a>
                             <p class="affiliate-note">Free plan available. Premium starts at $12/month</p>
@@ -96,7 +96,7 @@
                             <li>Free plan available</li>
                         </ul>
                         <div class="affiliate-cta">
-                            <a href="https://www.canva.com?ref=YOUR_AFFILIATE_ID" target="_blank" rel="nofollow" class="affiliate-button">
+                            <a href="https://www.canva.com?ref=YOUR_AFFILIATE_ID" target="_blank" rel="nofollow" class="affiliate-button" onclick="trackAffiliateClick('canva')">
                                 Try Canva Free <i class="fas fa-arrow-right"></i>
                             </a>
                             <p class="affiliate-note">Free plan available. Pro plan starts at $12.99/month</p>
@@ -170,6 +170,15 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-JS4S0R02VX');
+
+        // Affiliate click tracking
+        function trackAffiliateClick(tool) {
+            gtag('event', 'affiliate_click', {
+                'tool': tool,
+                'event_category': 'Affiliate',
+                'event_label': tool + ' affiliate link'
+            });
+        }
     </script>
 </body>
 </html> 
