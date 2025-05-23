@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yousuf816.github.io/ai-tools-blog/sitemap.xml 
