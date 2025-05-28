@@ -1,4 +1,27 @@
+# Temporary files
+*.zip
+*.tmp
+*.temp
+
+# System files
 .DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Dependencies
 node_modules/
+vendor/
+
+# Build files
+dist/
+build/
+
+# Environment files
 .env
-*.log 
+.env.local 
