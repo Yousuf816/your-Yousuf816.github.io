@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business System - Customer Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("OuaMPJL85bVKTF6nL");
+        })();
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">AI Business System</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/products.html">Products</a>
+                <a href="/customer_tracking.html" class="active">Customer Tracking</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tracking-section">
+            <h1>Customer Tracking System</h1>
+            
+            <div class="tracking-controls">
+                <button onclick="checkNewSales()">Check New Sales</button>
+                <button onclick="sendPendingEmails()">Send Pending Emails</button>
+            </div>
+
+            <div class="customer-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Purchase Date</th>
+                            <th>Welcome Email</th>
+                            <th>Day 2 Email</th>
+                            <th>Day 3 Email</th>
+                            <th>Day 5 Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerTableBody">
+                        <!-- Customer data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Function to check for new sales from Gumroad
+        function checkNewSales() {
+            // This would typically connect to Gumroad's API
+            // For now, we'll use a mock function
+            console.log('Checking for new sales...');
+        }
+
+        // Function to send pending emails
+        function sendPendingEmails() {
+            const customers = JSON.parse(localStorage.getItem('customers') || '[]');
+            customers.forEach(customer => {
+                if (!customer.welcomeEmailSent) {
+                    sendWelcomeEmail(customer);
+                }
+            });
+        }
+
+        // Function to send welcome email
+        function sendWelcomeEmail(customer) {
+            emailjs.send("service_qz6vmks", "template_3xzkevh", {
+                to_email: customer.email,
+                to_name: customer.name,
+                from_name: "AI Business System",
+                message: "Welcome to AI Business System! Here's your starter kit..."
+            })
+            .then(() => {
+                customer.welcomeEmailSent = new Date().toISOString();
+                updateCustomerData(customers);
+            })
+            .catch(error => console.error('Error sending welcome email:', error));
+        }
+
+        // Function to update customer data
+        function updateCustomerData(customers) {
+            localStorage.setItem('customers', JSON.stringify(customers));
+            displayCustomers(customers);
+        }
+
+        // Function to display customers in the table
+        function displayCustomers(customers) {
+            const tableBody = document.getElementById('customerTableBody');
+            tableBody.innerHTML = customers.map(customer => `
+                <tr>
+                    <td>${customer.name}</td>
+                    <td>${customer.email}</td>
+                    <td>${new Date(customer.purchaseDate).toLocaleDateString()}</td>
+                    <td>${customer.welcomeEmailSent ? '✅' : '❌'}</td>
+                    <td>${customer.day2EmailSent ? '✅' : '❌'}</td>
+                    <td>${customer.day3EmailSent ? '✅' : '❌'}</td>
+                    <td>${customer.day5EmailSent ? '✅' : '❌'}</td>
+                    <td>
+                        <button onclick="resendEmail('${customer.email}', 'welcome')">Resend Welcome</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            const customers = JSON.parse(localStorage.getItem('customers') || '[]');
+            displayCustomers(customers);
+        });
+    </script>
+</body>
+</html> 
