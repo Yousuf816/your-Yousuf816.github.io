@@ -1825,8 +1825,8 @@ footer::before {
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
-    text-align: center;
-}
+        text-align: center;
+    }
 
 .form-status .loading {
     color: var(--primary-color);
