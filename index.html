@@ -44,8 +44,46 @@
         gtag('js', new Date());
         gtag('config', 'G-JS4S0R02VX');
     </script>
+
+    <!-- Loading Animation -->
+    <style>
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid var(--primary-color);
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loader-wrapper.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
     <header class="header">
         <div class="progress-bar" id="progressBar"></div>
         <nav class="nav-container">
@@ -95,9 +133,9 @@
                     </div>
                 </div>
                 <div class="trust-badges">
-                    <img src="images/trust-badge-1.png" alt="Trust Badge 1">
-                    <img src="images/trust-badge-2.png" alt="Trust Badge 2">
-                    <img src="images/trust-badge-3.png" alt="Trust Badge 3">
+                    <img src="images/trust-badge-1.png" alt="Trust Badge 1" loading="lazy">
+                    <img src="images/trust-badge-2.png" alt="Trust Badge 2" loading="lazy">
+                    <img src="images/trust-badge-3.png" alt="Trust Badge 3" loading="lazy">
                 </div>
             </div>
         </section>
@@ -155,7 +193,7 @@
                     <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
                     <p>"Started with zero experience. Now making $15,000/month with AI services. The system is worth every penny!"</p>
                     <div class="testimonial-author">
-                        <img src="images/testimonial-1.jpg" alt="Sarah K.">
+                        <img src="images/testimonial-1.jpg" alt="Sarah K." loading="lazy">
                         <div>
                             <strong>Sarah K.</strong>
                             <span>AI Agency Owner</span>
@@ -166,13 +204,217 @@
                     <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
                     <p>"The ROI was incredible. Got my first client within 24 hours and scaled to $50,000/month in 3 months."</p>
                     <div class="testimonial-author">
-                        <img src="images/testimonial-2.jpg" alt="Michael R.">
+                        <img src="images/testimonial-2.jpg" alt="Michael R." loading="lazy">
                         <div>
                             <strong>Michael R.</strong>
                             <span>Digital Agency Founder</span>
                         </div>
                     </div>
                 </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p>"The templates and scripts saved me countless hours. I was able to close my first 5 clients in just 2 weeks!"</p>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-3.jpg" alt="David L." loading="lazy">
+                        <div>
+                            <strong>David L.</strong>
+                            <span>AI Consultant</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p>"From $0 to $25,000/month in 60 days. The client acquisition system is pure gold. Best investment ever!"</p>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-4.jpg" alt="Emma T." loading="lazy">
+                        <div>
+                            <strong>Emma T.</strong>
+                            <span>Tech Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-studies">
+            <h2 data-aos="fade-up">Success Stories in Detail</h2>
+            <div class="case-studies-grid">
+                <div class="case-study-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-study-header">
+                        <img src="images/case-study-1.jpg" alt="Sarah's Success Story" loading="lazy">
+                        <div class="case-study-badge">Featured Case Study</div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>From Zero to $15K/Month in 90 Days</h3>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <span class="metric-value">$0</span>
+                                <span class="metric-label">Starting Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">$15K</span>
+                                <span class="metric-label">Monthly Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">90</span>
+                                <span class="metric-label">Days to Success</span>
+                            </div>
+                        </div>
+                        <p class="case-study-description">"I started with no experience in AI or business. The system's step-by-step framework helped me land my first client within a week. Now I'm managing 5 clients and growing steadily."</p>
+                        <div class="case-study-highlights">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>✅ First client within 7 days</li>
+                                <li>✅ 5 recurring clients in 90 days</li>
+                                <li>✅ 98% client retention rate</li>
+                                <li>✅ Automated 80% of operations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-study-header">
+                        <img src="images/case-study-2.jpg" alt="Michael's Success Story" loading="lazy">
+                        <div class="case-study-badge">Featured Case Study</div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Scaling to $50K/Month with AI Services</h3>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <span class="metric-value">$5K</span>
+                                <span class="metric-label">Starting Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">$50K</span>
+                                <span class="metric-label">Monthly Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">3</span>
+                                <span class="metric-label">Months to Scale</span>
+                            </div>
+                        </div>
+                        <p class="case-study-description">"The client acquisition system was a game-changer. I was able to automate my outreach and close deals faster than ever. The ROI calculator helped me price my services perfectly."</p>
+                        <div class="case-study-highlights">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>✅ 10x revenue growth in 3 months</li>
+                                <li>✅ 15 enterprise clients onboarded</li>
+                                <li>✅ 95% automation rate achieved</li>
+                                <li>✅ 40% profit margin maintained</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-in">
+            <h2 data-aos="fade-up">Featured In</h2>
+            <div class="featured-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="featured-item">
+                    <img src="images/forbes-logo.png" alt="Forbes" loading="lazy">
+                    <p>"Revolutionizing AI Business Models"</p>
+                </div>
+                <div class="featured-item">
+                    <img src="images/techcrunch-logo.png" alt="TechCrunch" loading="lazy">
+                    <p>"The Future of AI Entrepreneurship"</p>
+                </div>
+                <div class="featured-item">
+                    <img src="images/inc-logo.png" alt="Inc Magazine" loading="lazy">
+                    <p>"Top AI Business System 2024"</p>
+                </div>
+                <div class="featured-item">
+                    <img src="images/entrepreneur-logo.png" alt="Entrepreneur" loading="lazy">
+                    <p>"Game-Changing AI Framework"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-timeline">
+            <h2 data-aos="fade-up">Your Journey to Success</h2>
+            <div class="timeline-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-item">
+                    <div class="timeline-icon">🚀</div>
+                    <div class="timeline-content">
+                        <h3>Day 1-7: Setup & First Client</h3>
+                        <ul>
+                            <li>✅ Complete system setup</li>
+                            <li>✅ Business model configuration</li>
+                            <li>✅ First client acquisition</li>
+                            <li>✅ Initial revenue generation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">📈</div>
+                    <div class="timeline-content">
+                        <h3>Week 2-4: Scale & Automate</h3>
+                        <ul>
+                            <li>✅ Client onboarding system</li>
+                            <li>✅ Process automation</li>
+                            <li>✅ Team building (if needed)</li>
+                            <li>✅ Revenue optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">💎</div>
+                    <div class="timeline-content">
+                        <h3>Month 2-3: Growth & Expansion</h3>
+                        <ul>
+                            <li>✅ Multiple revenue streams</li>
+                            <li>✅ Advanced automation</li>
+                            <li>✅ Market expansion</li>
+                            <li>✅ Team scaling</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">🏆</div>
+                    <div class="timeline-content">
+                        <h3>Month 4-6: Optimization & Mastery</h3>
+                        <ul>
+                            <li>✅ System optimization</li>
+                            <li>✅ Advanced strategies</li>
+                            <li>✅ Market leadership</li>
+                            <li>✅ Sustainable growth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="success-metrics">
+            <h2 data-aos="fade-up">Proven Results</h2>
+            <div class="metrics-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="metric-card">
+                    <div class="metric-icon">💰</div>
+                    <div class="metric-number" data-count="5000">0</div>
+                    <div class="metric-label">Average Monthly Revenue</div>
+                    <div class="metric-trend positive">↑ 15% MoM Growth</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">👥</div>
+                    <div class="metric-number" data-count="10000">0</div>
+                    <div class="metric-label">Active Users</div>
+                    <div class="metric-trend positive">↑ 25% MoM Growth</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">⭐</div>
+                    <div class="metric-number" data-count="98">0</div>
+                    <div class="metric-label">Success Rate</div>
+                    <div class="metric-trend positive">↑ 2% This Month</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-number" data-count="24">0</div>
+                    <div class="metric-label">Hours to First Sale</div>
+                    <div class="metric-trend positive">↓ 30% Faster</div>
+                </div>
+            </div>
+            <div class="metrics-chart" data-aos="fade-up" data-aos-delay="200">
+                <canvas id="revenueChart"></canvas>
             </div>
         </section>
 
@@ -228,9 +470,10 @@
                         <p>7-Day Action Plan</p>
                     </div>
                 </div>
-                <form class="lead-form" id="leadForm">
-                    <input type="email" placeholder="Enter your email" required>
+                <form class="lead-form" id="leadForm" onsubmit="handleLeadForm(event)">
+                    <input type="email" id="leadEmail" placeholder="Enter your email" required>
                     <button type="submit" class="btn btn-primary">Get Free Kit</button>
+                    <div id="leadFormMessage" class="form-message"></div>
                 </form>
                 <p class="lead-note">✨ Join 5,000+ entrepreneurs who've already downloaded the kit</p>
             </div>
@@ -257,6 +500,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- Add AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Initialize AOS
         AOS.init({
@@ -269,10 +513,17 @@
             emailjs.init("OuaMPJL85bVKTF6nL");
         })();
 
-        // Email Marketing Integration
+        // Enhanced Email Marketing Integration
         function handleLeadForm(event) {
             event.preventDefault();
             const email = document.getElementById('leadEmail').value;
+            const messageDiv = document.getElementById('leadFormMessage');
+            const submitButton = event.target.querySelector('button[type="submit"]');
+            
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Sending...';
+            messageDiv.innerHTML = '';
             
             // Send welcome email using EmailJS
             emailjs.send("service_qz6vmks", "template_3xzkevh", {
@@ -283,16 +534,24 @@
             })
             .then(function(response) {
                 console.log("SUCCESS", response);
-                document.getElementById('leadFormMessage').innerHTML = 
-                    '🎉 Check your email for your free AI Business Starter Kit!';
+                messageDiv.innerHTML = '🎉 Check your email for your free AI Business Starter Kit!';
+                messageDiv.className = 'form-message success';
+                
+                // Reset form
+                document.getElementById('leadForm').reset();
                 
                 // Schedule follow-up emails
                 triggerWelcomeSequence(email);
             })
             .catch(function(error) {
                 console.error("FAILED", error);
-                document.getElementById('leadFormMessage').innerHTML = 
-                    'Oops! Something went wrong. Please try again.';
+                messageDiv.innerHTML = '⚠️ Oops! Something went wrong. Please try again.';
+                messageDiv.className = 'form-message error';
+            })
+            .finally(function() {
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Get Free Kit';
             });
         }
 
@@ -362,6 +621,113 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // Loading Animation
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.loader-wrapper');
+            loader.classList.add('fade-out');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        });
+
+        // Animated Counters
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-count'));
+            const duration = 2000; // 2 seconds
+            const step = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        // Initialize counters when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.metric-number');
+                    counters.forEach(counter => animateCounter(counter));
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.metrics-grid').forEach(grid => {
+            observer.observe(grid);
+        });
+
+        // Revenue Chart
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Monthly Revenue',
+                    data: [3000, 3500, 4200, 4800, 5200, 5000],
+                    borderColor: '#4F46E5',
+                    backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
     </script>
+
+    <style>
+        .form-message {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .form-message.success {
+            display: block;
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .form-message.error {
+            display: block;
+            background-color: var(--error-color);
+            color: white;
+        }
+        
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
 </body>
 </html> 
